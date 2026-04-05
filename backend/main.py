@@ -1,12 +1,23 @@
 from fastapi import FastAPI
-from sqlalchemy.orm import declarative_base
-from database import engine
+from routes import auth , users
+from database import Base, engine
+from contextlib import asynccontextmanager
 
-app = FastAPI()
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
+    yield
+    
+app = FastAPI(title="Family Budget Tracker Backend" , lifespan=lifespan)
 
 @app.get("/")
 def root():
     return {"message": "Welcome to Family Budget Tracker"}
 
-Base = declarative_base()
-Base.metadata.create_all(engine)
+app.include_router(auth.router)
+app.include_router(users.router)
+
+

@@ -2,7 +2,9 @@ fastapi
 uvicorn
 python-dotenv
 sqlalchemy
-psycopg2
-bcrypt
+asyncpg
 PyJWT
 email-validator
+bcrypt
+python-jose
+jose
