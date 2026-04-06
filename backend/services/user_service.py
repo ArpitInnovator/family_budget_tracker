@@ -37,6 +37,8 @@ async def create_user(
     await db.refresh(user_db)
     return user_db
 
+    
+
 
 async def list_users(db: AsyncSession, *, skip: int, limit: int) -> List[User]:
  

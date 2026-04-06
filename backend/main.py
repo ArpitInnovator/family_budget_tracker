@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routes import auth , users
+from routes import auth , users, categories, transactions, dashboard
 from database import Base, engine
 from contextlib import asynccontextmanager
 
@@ -19,5 +19,7 @@ def root():
 
 app.include_router(auth.router)
 app.include_router(users.router)
-
+app.include_router(categories.router)
+app.include_router(transactions.router)
+app.include_router(dashboard.router)
 

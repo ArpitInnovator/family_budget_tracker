@@ -6,6 +6,7 @@ from sqlalchemy.types import Boolean, DateTime, Enum as SAEnum
 from sqlalchemy.dialects.postgresql import UUID as PG_UUID
 from sqlalchemy import text
 import uuid
+from sqlalchemy.sql import func
 
 class UserRole(str, Enum):
     admin = "admin"
@@ -20,6 +21,6 @@ class User(Base):
     email = Column(String, nullable=False, unique=True,index=True)
     hashed_password = Column(LargeBinary, nullable=False)
     is_active = Column(Boolean, nullable=False, default=True)
-    created_at = Column(DateTime, nullable=False, default=datetime.now)
+    created_at = Column(DateTime, nullable=False, server_default=func.now())
     role = Column(SAEnum(UserRole, name="user_role_enum"), nullable=False)
 
