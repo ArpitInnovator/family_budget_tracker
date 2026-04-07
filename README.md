@@ -29,6 +29,7 @@ Role-based access control is enforced consistently across all endpoints using JW
 | Backend    | FastAPI                    |
 | Database  | PostgreSQL |
 | Authentication  | JWT |
+| Backend and database Deployment  | Render |
 
 ---
 
@@ -43,7 +44,7 @@ Role-based access control is enforced consistently across all endpoints using JW
 5. Install dependencies:
    - `pip install -r requirements.txt`
 6. Start server:
-   - `uvicorn app.main:app --reload`
+   - `uvicorn main:app --reload`
 
 After the server starts, visit Swagger docs:
 
@@ -126,4 +127,5 @@ Authentication: all routes require a valid `Authorization: Bearer <token>` heade
 - Deleted transactions are **soft-deleted** (`is_deleted = true`) and excluded from normal reads.
 
   ---
-
+## Test APIs Live here
+https://family-budget-tracker-tziy.onrender.com/docs
