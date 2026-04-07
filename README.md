@@ -129,3 +129,12 @@ Authentication: all routes require a valid `Authorization: Bearer <token>` heade
   ---
 ## Test APIs Live here
 https://family-budget-tracker-tziy.onrender.com/docs
+
+---
+## ScreenShots
+<img width="1918" height="1013" alt="image" src="https://github.com/user-attachments/assets/648bc6ca-ba52-4b12-8014-7d7e87a77b70" />
+<img width="1837" height="881" alt="image" src="https://github.com/user-attachments/assets/882cf8ce-7cfa-4ce3-b3a5-436cda38a29a" />
+<img width="1876" height="702" alt="image" src="https://github.com/user-attachments/assets/7bbe216a-3569-4337-9258-fa6be194b5d2" />
+
+
+
